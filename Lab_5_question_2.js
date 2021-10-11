@@ -324,6 +324,6 @@ console.log(countlit)
 // ///TODO write code to print the names of all of the prize categories
 
 
-//
+// I did all the stages needed in the lab sheet
 
 
