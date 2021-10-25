@@ -63,8 +63,8 @@
     let homeownerHouseNumberInput = document.querySelector('#homeowner-house-number')
     let homeownerStreetNameInput = document.querySelector('#homeowner-street-name')
     let treeTypeSelect = document.querySelector('#tree-type')
-    let city = document.querySelector('#city')
-    let zipcode = document.querySelector('#zipcode')
+    let city = document.querySelector('#city')   # if you use cityInput it's clearer what this is
+    let zipcode = document.querySelector('#zipcode')  # use zipCodeInput
     // TODO create a variable for city input element
     // TODO create a variable for zip code input element
     
@@ -78,7 +78,7 @@
         let houseNumber = homeownerHouseNumberInput.value
         let streetName = homeownerStreetNameInput.value
         let treeType = treeTypeSelect.value
-        let City2 = city.value
+        let City2 = city.value  // let city = cityInput.value would be more readable 
         let zipcode2 = zipcode.value
 
         let orderSummaryParagraph2 = orderSummaryParagraph.value
@@ -113,10 +113,14 @@
         if (!City2) {
             errors.push('Enter a city')
         }
-
-        if(!orderSummaryParagraph2){
-            errors.push('Complete the order !')
+      
+        if (zipcode2 < 55001 || zipcode2 > 56763) {
+            errors.push('Invalid zip code')
         }
+
+//         if(!orderSummaryParagraph2){
+//             errors.push('Complete the order !')
+//         }
 
         // If a form element
         // nt has not been completed, add an error message to the errors array (use push)
@@ -131,18 +135,23 @@
             alert(errorMsg)
             return
         }
+// check this earlier
+//         if (zipcode2 >= 55001 && zipcode2 <= 56763) {
+//             return true
+//         }
 
-        if (zipcode2 >= 55001 && zipcode2 <= 56763) {
-            return true
-        }
-
-        return false
+//         return false
+     
+      
+         // TODO - If there are no errors, use a template string to display an order summary in the order summary paragraph
+         // this is where you'll make the string with the order info in, with the name, houseNumber, city... variables
+         // and display in the order-summary element.
+      
     })
 
 
 
-        // TODO - If there are no errors, use a template string to display an order summary in the order summary paragraph
-
+     
         
 
 
